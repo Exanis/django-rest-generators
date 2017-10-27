@@ -99,3 +99,11 @@ ENV/
 
 # mypy
 .mypy_cache/
+.idea/
+
+# Working artefacts
+data/
+drt/
+features/
+db.sqlite3
+manage.py
