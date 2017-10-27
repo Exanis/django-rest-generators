@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='Django rest tools',
+    name='django_rest_tools',
     packages=['django_rest_tools'],
     version='0.1',
     description='Simple tool to add a bunch of commands related to django_rest_framework, django_guardian and behave',
@@ -14,7 +14,7 @@ setup(
     ],
     license='MIT',
     url='https://github.com/Exanis/django-rest-tools',
-    download_url='https://github.com/Exanis/django-rest-tools/archive/0.1.tar.gz',
+    download_url='https://github.com/Exanis/django-rest-tools/archive/0.1.2.tar.gz',
     keywords=['testing', 'django', 'djangorestframework', 'behave'],
     classifiers=[],
     include_package_data=True
