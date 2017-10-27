@@ -51,8 +51,6 @@ def then_the_return_code_is(context, code):
     :type code: str
     :type context: behave.runner.Context
     """
-    print(context.apiRequest.status_code)
-    print(context.apiRequest.data)
     assert context.apiRequest.status_code == int(code)
 
 
