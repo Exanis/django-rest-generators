@@ -1,8 +1,8 @@
 from distutils.core import setup
 
 setup(
-    name='django_rest_tools',
-    packages=['django_rest_tools'],
+    name='django_rest_generators',
+    packages=['django_rest_generators'],
     version='0.1',
     description='Simple tool to add a bunch of commands related to django_rest_framework, django_guardian and behave',
     author='Yann Piquet',
@@ -13,8 +13,8 @@ setup(
         'behave'
     ],
     license='MIT',
-    url='https://github.com/Exanis/django-rest-tools',
-    download_url='https://github.com/Exanis/django-rest-tools/archive/0.1.2.tar.gz',
+    url='https://github.com/Exanis/django-rest-generators',
+    download_url='https://github.com/Exanis/django-rest-generators/archive/0.1.2.tar.gz',
     keywords=['testing', 'django', 'djangorestframework', 'behave'],
     classifiers=[],
     include_package_data=True

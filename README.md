@@ -1,12 +1,12 @@
-# django-rest-tools
+# django-rest-generators
 A set of tools used to make django models management faster with django-rest-framework and behave
 
 ## Install
-Just as most of django tools, you can install DRT quite quickly :
+Just as most of django tools, you can install DRG quite quickly :
 
-``pip install django-rest-tools``
+``pip install django-rest-generators``
 
-Then just add django_rest_tools to your INSTALLED_APPS
+Then just add django_rest_generators to your INSTALLED_APPS
 
 If you want to use auto-install for newly created application (recommanded), you should also add :
 
@@ -19,7 +19,7 @@ somewhere in your settings.py file (or the same file where you put INSTALLED_APP
 
 ## Added commands
 
-The following commands are added to your project when you use DRT :
+The following commands are added to your project when you use DRG :
 
 ### create_app
 
@@ -46,7 +46,7 @@ $ python manage.py create_model my_app my_model
 
 ### make_rest_model
 
-The ``make_rest_model`` command is the main tool in DRT. It parse a model an generate a set of ready-to-use
+The ``make_rest_model`` command is the main tool in DRG. It parse a model an generate a set of ready-to-use
 tools around it :
 
 - A serializer
@@ -157,18 +157,18 @@ In the previous table, you must replace *model* by the name of your model. When 
 - change_*model*
 - delete_*model*
 
-DRT will assume a fourth permission exists if you use ``model`` or ``object`` permissions : view_*model*
+DRG will assume a fourth permission exists if you use ``model`` or ``object`` permissions : view_*model*
 
 ## Other tools
 
-DRT also add some shortcuts that may be usefull in some context and that can be used in your project.
+DRG also add some shortcuts that may be usefull in some context and that can be used in your project.
 
 ### Gherkin sentences
 
-To use DRT's gherkin sentences, you must include it in your steps definition. You can do so by adding the following line in the \_\_init__.py file in your ``steps`` directory :
+To use DRG's gherkin sentences, you must include it in your steps definition. You can do so by adding the following line in the \_\_init__.py file in your ``steps`` directory :
 
 ```python
-from django_rest_tools.steps import authentication, database, http
+from django_rest_generators.steps import authentication, database, http
 ```
 
 Here is the list of sentences :
@@ -259,4 +259,4 @@ Three classes are added to RestFramework's permissions classes :
 
 ## Dependencies
 
-DRT is strongly dependent of [DjangoRestFramework](http://www.django-rest-framework.org/) and [DjangoGuardian](https://github.com/django-guardian/django-guardian). It also need [Behave](https://pythonhosted.org/behave/).
+DRG is strongly dependent of [DjangoRestFramework](http://www.django-rest-framework.org/) and [DjangoGuardian](https://github.com/django-guardian/django-guardian). It also need [Behave](https://pythonhosted.org/behave/).

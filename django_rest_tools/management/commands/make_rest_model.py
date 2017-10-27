@@ -3,7 +3,7 @@ from django.core.management import BaseCommand
 from django.db import models
 from django.apps import apps
 from django.conf import settings
-from django_rest_tools import generators
+from django_rest_generators import generators
 
 
 class Command(BaseCommand):
@@ -213,7 +213,7 @@ class %s(serializers.ModelSerializer):
             os.mkdir(steps)
             init = os.path.join(steps, "__init__.py")
             with open(init, "w+") as file:
-                file.write("from django_rest_tools.steps"
+                file.write("from django_rest_generators.steps"
                            " import authentication, database, http\n")
         path = os.path.join(steps, "%s.%s.py" % (app, name))
         with open(path, "w+") as file:
@@ -247,7 +247,7 @@ def given_a_basic_set_of_{2}_exists(context):
             "%s.%s.feature" % (app, name)
         )
         with open(path, "w+") as file:
-            file.write("""# Created by Django Rest Tools
+            file.write("""# Created by Django Rest Generators
 Feature: {0} management and persistance
   As autorized user,
   I want to be able to create a {1}, persiste it and retrieve it
@@ -440,7 +440,7 @@ Feature: {0} management and persistance
         viewset_file = os.path.join(viewset_path, "%s.py" % name)
         viewset_init = os.path.join(viewset_path, "__init__.py")
         drf_import = ''
-        drt_import = ''
+        drg_import = ''
         if perms == "everyone":
             perms_classes = 'AllowAny'
             drf_import = ', permissions'
@@ -452,7 +452,7 @@ Feature: {0} management and persistance
             drf_import = ', permissions'
         elif perms == 'model':
             perms_classes = 'DjangoModelPermissionsWithRead'
-            drt_import = 'from django_rest_tools import permissions\n'
+            drg_import = 'from django_rest_generators import permissions\n'
         elif perms == 'model_or_read_only':
             perms_classes = 'DjangoModelPermissions'
             drf_import = ', permissions'
@@ -461,13 +461,13 @@ Feature: {0} management and persistance
             drf_import = ', permissions'
         elif perms == 'object':
             perms_classes = 'DjangoObjectPermissionsWithRead'
-            drt_import = 'from django_rest_tools import permissions\n'
+            drg_import = 'from django_rest_generators import permissions\n'
         elif perms == 'object_or_read_only':
             perms_classes = 'DjangoObjectPermissions'
             drf_import = ', permissions'
         elif perms == 'object_or_anon_read_only':
             perms_classes = 'DjangoObjectPermissionsOrAnonReadOnly'
-            drt_import = 'from django_rest_tools import permissions\n'
+            drg_import = 'from django_rest_generators import permissions\n'
         else:
             perms_classes = 'IsAdminUser'
             drf_import = ', permissions'
@@ -484,7 +484,7 @@ class %s(viewsets.ModelViewSet):
         permissions.%s
     ]
 """ % (
-                drt_import,
+                drg_import,
                 drf_import,
                 app,
                 self.model_name,

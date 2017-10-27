@@ -103,7 +103,7 @@ ENV/
 
 # Working artefacts
 data/
-drt/
+drg/
 features/
 db.sqlite3
 manage.py
