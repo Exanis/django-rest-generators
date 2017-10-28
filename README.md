@@ -159,6 +159,11 @@ In the previous table, you must replace *model* by the name of your model. When 
 
 DRG will assume a fourth permission exists if you use ``model`` or ``object`` permissions : view_*model*
 
+##### Existing project
+
+Sometimes, you may want to add DRG to an existing project, that may already contain some gherkin files. In this case, you will need to add
+DRGs step to your project as described below, and fix any possible conflicts, for DRG generated tests to work.
+
 ## Other tools
 
 DRG also add some shortcuts that may be usefull in some context and that can be used in your project.
