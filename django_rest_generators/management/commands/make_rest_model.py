@@ -7,6 +7,7 @@ from django_rest_generators import generators
 
 
 class Command(BaseCommand):
+    include_validators = False
     validators = []
     model = None
     model_name = ''
@@ -69,6 +70,7 @@ class Command(BaseCommand):
         self.model_name = self.model._meta.model_name.capitalize()
 
     def _date_validator(self, validator, prop_name, prop_date):
+        self.include_validators = True
         return """
             validators.%sValidator(
                 queryset=models.%s.objects.all(),
@@ -110,6 +112,7 @@ class Command(BaseCommand):
             "allow_null=%s" % ("True" if prop.null else "False")
         ]
         if prop.unique:
+            self.include_validators = True
             basics.append("""validators=[
             validators.UniqueValidator(
                 queryset=models.%s.objects.all()
@@ -180,7 +183,7 @@ class %s(serializers.ModelSerializer):
             '%s'
         )%s
 """ % (
-                ", validators" if len(self.validators) > 0 else '',
+                ", validators" if self.include_validators else '',
                 app,
                 name.capitalize(),
                 "\n    ".join(mapped['serialized']),
