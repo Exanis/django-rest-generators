@@ -17,7 +17,7 @@ setup(
     url='https://github.com/Exanis/django-rest-generators',
     download_url='https://github.com/Exanis/django-rest-generators/archive/0.1.5.tar.gz',
     keywords=['testing', 'django', 'djangorestframework', 'behave'],
-    classifiers=(
+    classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
@@ -28,6 +28,6 @@ setup(
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4'
-    ),
+    ],
     include_package_data=True
 )
