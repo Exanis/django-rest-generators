@@ -4,7 +4,7 @@ from setuptools import find_packages
 setup(
     name='django_rest_generators',
     packages=find_packages(),
-    version='0.1.5',
+    version='0.1.6',
     description='Simple tool to add a bunch of commands related to django_rest_framework, django_guardian and behave',
     author='Yann Piquet',
     author_email='yann.piquet@epitech.eu',
